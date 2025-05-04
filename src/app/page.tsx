@@ -8,12 +8,12 @@ export default function Home() {
     const [error, setError] = useState("");
 
     const handleSubmit = async (repo: string, owner: string, event: string) => {
-        console.log(repo, owner, event);
+        //debug
+        //console.log(repo, owner, event);
         try {
             setError("");
             const response = await fetch(`/api/events?repo=${repo}&owner=${owner}&event=${event}`);
             const data = await response.json();
-            console.log(data);
             setEvents(data);
         } catch (error) {
             console.error("Error fetching events:", error);

@@ -3,6 +3,9 @@
 import { NextResponse } from "next/server";
 import { GitHubEvent } from "@/app/types/github";
 
+//This could be a POST request if the form gets more complex but for this exercise I kept it simple with 
+// GET request and query params
+
 export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const repo = searchParams.get("repo");
