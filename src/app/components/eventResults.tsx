@@ -33,14 +33,21 @@ export default function EventResults({ events = [] }: EventResultsProps) {
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap">
                                 <div className="flex items-center">
-                                    <Image 
-                                        className="rounded-full mr-2" 
-                                        src={event.actor.avatar_url} 
-                                        alt={event.actor.login}
-                                        width={32}
-                                        height={32}
-                                    />
-                                    <span className="text-sm text-gray-900">{event.actor.login}</span>
+                                    <a 
+                                        href={`https://github.com/${event.actor.login}`}
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        className="flex items-center hover:opacity-80"
+                                    >
+                                        <Image 
+                                            className="rounded-full mr-2" 
+                                            src={event.actor.avatar_url} 
+                                            alt={event.actor.login}
+                                            width={32}
+                                            height={32}
+                                        />
+                                        <span className="text-sm text-gray-900">{event.actor.login}</span>
+                                    </a>
                                 </div>
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
